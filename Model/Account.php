@@ -7,9 +7,9 @@ use Ddeboer\Salesforce\MapperBundle\Response\MappedRecordIterator;
 
 /**
  * Salesforce standard account object
- * 
+ *
  * You can extend this class to incorporate custom fields on the object.
- * 
+ *
  * @Salesforce\Object(name="Account")
  */
 class Account extends AbstractModel
@@ -20,244 +20,245 @@ class Account extends AbstractModel
      *                      class="Ddeboer\Salesforce\MapperBundle\Model\AccountContactRole")
      */
     protected $accountContactRoles;
-    
+
     /**
      * @var float
      * @Salesforce\Field(name="AnnualRevenue")
      */
     protected $annualRevenue;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="BillingCity")
      */
     protected $billingCity;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="BillingCountry")
      */
     protected $billingCountry;
-    
+
     /**
      * @var @Salesforce\Field(name="BillingPostalCode")
      */
     protected $billingPostalCode;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="BillingState")
      */
     protected $billingState;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="BillingStreet")
      */
     protected $billingStreet;
-    
+
     /**
      * @var ResultIterator
      * @Salesforce\Relation(name="Contacts", class="Ddeboer\Salesforce\MapperBundle\Model\Contact")
      */
     protected $contacts = array();
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="Description")
      */
     protected $description;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="Fax")
      */
     protected $fax;
-    
+
     /**
      * @var string
      */
     protected $histories;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="Industry")
      */
     protected $industry;
-    
+
     /**
      * @var boolean
      * @Salesforce\Field(name="IsDeleted")
      */
     protected $isDeleted;
-    
+
     /**
      * @var string
      */
     protected $jigsaw;
-    
+
     /**
      * @var \DateTime
      * @Salesforce\FIeld(name="LastActivityDate")
      */
     protected $lastActivityDate;
-    
+
     /**
-     * @var 
+     * @var
      */
     protected $masterRecord;
-    
+
     /**
      * @var string
      */
     protected $masterRecordId;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="Name")
      */
     protected $name;
-    
+
     /**
      * @var ResultIterator
      */
     protected $notes;
-    
+
     /**
      * @var ResultIterator
      */
     protected $notesAndAttachments;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="NumberOfEmployees")
      */
     protected $numberOfEmployees;
-    
+
     /**
      * @var ResultIterator
      */
     protected $openActivities;
-    
+
     /**
      * @var ResultIterator
      */
     protected $opportunities;
-    
+
     /**
      * @var tnsQueryResult
      */
     protected $opportunityPartnersTo;
-    
+
     /**
      * @var User
      * @Salesforce\Relation(field="OwnerId", name="Owner",
      *                      class="Ddeboer\Salesforce\MapperBundle\Model\User")
      */
     protected $owner;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="OwnerId")
      */
     protected $ownerId;
-    
+
     /**
      * @var string
      */
     protected $parent;
-    
+
     /**
      * @var string
      */
     protected $parentId;
-    
+
     /**
      * @var tnsQueryResult
      */
     protected $partnersFrom;
-    
+
     /**
      * @var tnsQueryResult
      */
     protected $partnersTo;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="Phone")
      */
     protected $phone;
-    
+
     /**
      * @var tnsQueryResult
      */
     protected $processInstances;
-    
+
     /**
      * @var tnsQueryResult
      */
     protected $processSteps;
-    
+
     /**
      * @var ensRecordType
      */
     protected $recordType;
-    
+
     /**
      * @var id
      */
     protected $recordTypeId;
-    
+
     /**
      * @var tnsQueryResult
      */
     protected $shares;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="ShippingCity")
      */
     protected $shippingCity;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="ShippingCountry")
      */
     protected $shippingCountry;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="ShippingPostalCode")
      */
     protected $shippingPostalCode;
-    
+
     /**
      * @var string
+     * @Salesforce\Field(name="ShippingState")
      */
     protected $shippingState;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="ShippingStreet")
      */
     protected $shippingStreet;
-    
+
     /**
      * @var tnsQueryResult
      */
     protected $tags;
-    
+
     /**
      * @var tnsQueryResult
      */
     protected $tasks;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="Type")
      */
     protected $type;
-    
+
     /**
      * @var string
      * @Salesforce\Field(name="Website")
@@ -266,7 +267,7 @@ class Account extends AbstractModel
 
     /**
      * Get contact roles for the account
-     * 
+     *
      * @return MappedRecordIterator
      */
     public function getAccountContactRoles()
