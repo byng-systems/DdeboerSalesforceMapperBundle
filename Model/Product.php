@@ -51,7 +51,14 @@ class Product extends AbstractModel
      */
     protected $pricebookEntries;
 
-
+    /**
+     *
+     * @var string
+     * @Salesforce\Field(name="ProductCode")
+     */
+    protected $productCode;
+    
+    
     public function getName()
     {
         return $this->name;
@@ -114,6 +121,16 @@ class Product extends AbstractModel
     {
         $this->pricebookEntries = $pricebookEntries;
         return $this;
+    }
+
+    public function getProductCode()
+    {
+        return $this->productCode;
+    }
+
+    public function setProductCode($productCode)
+    {
+        $this->productCode = $productCode;
     }
 
 }
