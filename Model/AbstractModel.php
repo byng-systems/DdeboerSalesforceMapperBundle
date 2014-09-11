@@ -4,6 +4,7 @@ namespace Ddeboer\Salesforce\MapperBundle\Model;
 
 use DateTime;
 use Serializable;
+use Ddeboer\Salesforce\MapperBundle\Model\User;
 use Ddeboer\Salesforce\MapperBundle\Annotation as Salesforce;
 use Ddeboer\Salesforce\MapperBundle\Response\MappedRecordIterator;
 
@@ -137,7 +138,13 @@ abstract class AbstractModel implements Serializable
      */
     public function unserialize($serialized)
     {
-        foreach (unserialize($serialized) as $name => $value) {
+        $values = unserialize($serialized);
+        
+        if (!is_array($values) && !($values instanceof Iterator)) {
+            return;
+        }
+        
+        foreach ($values as $name => $value) {
             $this->$name = $value;
         }
     }
