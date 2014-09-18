@@ -5,8 +5,8 @@ namespace Ddeboer\Salesforce\MapperBundle\Request\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Ddeboer\Salesforce\MapperBundle\Mapper;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * This param converter convers a Salesforce id into a Salesforce object, using
@@ -68,4 +68,3 @@ class SalesforceParamConverter implements ParamConverterInterface
         return in_array($configuration->getClass(), $this->mappings);
     }
 }
-
